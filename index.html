@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,47 +8,80 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Chiron+Sung+HK:ital,wght@0,200..900;1,200..900&family=Fjalla+One&display=swap" rel="stylesheet" />
+
+  <script>
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            warna1: '#36ADA3',
+            warna2: '#242F72',
+            warna3: '#30578A',
+            warna4: '#15165E'
+          },
+          fontFamily: {
+            utama: ['Fjalla One', 'Arial Narrow', 'sans-serif'],
+            sub: ['Chiron Sung HK', 'Georgia', 'serif']
+          },
+          boxShadow: {
+            kartu: '0 16px 26px rgba(0, 0, 0, 0.10)'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="asset/css/style.css" />
 </head>
 
-<body>
-  <main class="page">
-    <section id="home" class="hero">
-      <div class="wrap hero__inner">
-        <header class="hero__header">
-          <a class="logo" href="#home" aria-label="Logo Zhulfi Bajra">
-            <img src="asset/image/logo-dummy.svg" alt="Logo Zhulfi Bajra" />
+<body class="m-0 overflow-x-hidden bg-warna2 font-sub text-warna1 antialiased">
+  <main class="w-full overflow-hidden">
+    <section id="home" class="bg-warna1 text-warna2">
+      <div class="relative mx-auto min-h-[690px] w-[calc(100%_-_56px)] max-w-[775px] pb-[300px] sm:min-h-[520px] sm:w-[calc(100%_-_80px)] sm:pb-0 md:w-[calc(100%_-_120px)] lg:h-[438px] lg:min-h-0 lg:w-[calc(100%_-_184px)]">
+        <header class="flex items-start justify-between gap-[18px] pt-[22px] sm:pt-[25px] lg:h-[89px]">
+          <a href="#home" aria-label="Logo Zhulfi Bajra" class="block h-[48px] w-[48px] shrink-0 sm:h-[51px] sm:w-[51px]">
+            <img src="asset/image/logo-dummy.svg" alt="Logo Zhulfi Bajra" class="h-full w-full object-contain" />
           </a>
 
-          <nav class="nav" aria-label="Navigasi utama">
-            <a href="#tentang">Tentang</a>
-            <a href="#keahlian">Keahlian</a>
-            <a href="#proyek">Proyek</a>
-            <a href="#kontak">Kontak</a>
+          <nav aria-label="Navigasi utama" class="hidden flex-wrap justify-end gap-x-[28px] gap-y-[13px] pt-[5px] font-utama text-[18px] leading-none md:flex lg:gap-x-[45px] lg:text-[20px]">
+            <a href="#tentang" class="transition hover:opacity-80">Tentang</a>
+            <a href="#keahlian" class="transition hover:opacity-80">Keahlian</a>
+            <a href="#proyek" class="transition hover:opacity-80">Proyek</a>
+            <a href="#kontak" class="transition hover:opacity-80">Kontak</a>
           </nav>
         </header>
 
-        <div class="hero__copy">
-          <h1>Hi Zhulfi Bajra</h1>
-          <span class="hero__line"></span>
-          <p class="hero__role">Difabel Tunarungu - Full Stack Developer - ASN JATIM</p>
-          <p class="hero__desc">
+        <div class="relative z-10 w-full max-w-[420px] pt-[50px] sm:w-[390px] sm:pt-[56px] lg:w-[420px] lg:pt-[57px]">
+          <h1 class="font-utama text-[56px] font-normal leading-[0.96] tracking-[0] sm:text-[61px] lg:text-[70px] lg:leading-[0.94]">
+            Hi Zhulfi Bajra
+          </h1>
+
+          <div class="mt-[6px] h-[3px] w-full max-w-[300px] bg-warna2 sm:max-w-[328px] lg:mt-[5px] lg:max-w-[380px]"></div>
+
+          <p class="mt-[9px] max-w-[330px] font-utama text-[17px] leading-[1.14] tracking-[0] sm:max-w-[380px] sm:text-[18px] lg:max-w-none lg:text-[20px] lg:leading-[1.1]">
+            Difabel Tunarungu - Full Stack Developer - ASN JATIM
+          </p>
+
+          <p class="mt-[31px] max-w-[360px] font-sub text-[18px] leading-[1.08] tracking-[-0.035em] sm:max-w-[350px] sm:text-[19px] lg:mt-[37px] lg:max-w-none lg:text-[20px] lg:leading-[1.06] lg:tracking-[-0.04em]">
             Membangun solusi digital yang berdampak - dari infrastruktur server hingga antarmuka pengguna. Tuli tidak membatasi kemampuan menulis kode yang berbicara.
           </p>
         </div>
 
-        <img class="hero__photo" src="asset/image/profile-photo.jpg" alt="Foto Zhulfi Bajra" />
+        <img src="asset/image/profile-photo.jpg" alt="Foto Zhulfi Bajra" class="absolute bottom-0 right-1/2 h-[290px] w-[360px] max-w-none translate-x-1/2 object-cover object-left-bottom sm:right-[-38px] sm:h-[325px] sm:w-[310px] sm:translate-x-0 lg:right-[-92px] lg:h-[345px] lg:w-[320px]" />
       </div>
     </section>
 
-    <section id="tentang" class="about">
-      <div class="wrap">
-        <div class="section-title about__title">
-          <img src="asset/image/icon-about-dummy.svg" alt="" />
-          <h2>Tentang Saya</h2>
+    <section id="tentang" class="bg-warna2 py-[32px] pb-[54px] sm:pb-[60px] lg:min-h-[627px] lg:py-[29px] lg:pb-[56px]">
+      <div class="mx-auto w-[calc(100%_-_56px)] max-w-[775px] sm:w-[calc(100%_-_80px)] md:w-[calc(100%_-_120px)] lg:w-[calc(100%_-_184px)]">
+        <div class="flex items-center gap-[14px] sm:gap-[16px] lg:gap-[18px]">
+          <img src="asset/image/icon-about-dummy.svg" alt="" class="h-[54px] w-[54px] shrink-0 object-contain sm:h-[62px] sm:w-[62px] lg:h-[64px] lg:w-[64px]" />
+          <h2 class="font-utama text-[34px] font-normal leading-none tracking-[0] sm:text-[42px] lg:text-[50px]">
+            Tentang Saya
+          </h2>
         </div>
 
-        <div class="about__text">
+        <div class="mt-[24px] max-w-full space-y-[22px] font-sub text-[16px] leading-[1.2] tracking-[-0.035em] sm:text-[19px] lg:mt-[25px] lg:space-y-[24px] lg:text-[20px] lg:leading-[1.16] lg:tracking-[-0.055em]">
           <p>
             Saya Zhulfi Bajra, seorang Full Stack Developer yang juga berstatus sebagai Aparatur Sipil Negara (ASN) di Provinsi Jawa Timur. Sebagai difabel tuli, saya membuktikan bahwa keterbatasan indrai tidak menghalangi kemampuan teknis.
           </p>
@@ -60,34 +93,40 @@
           </p>
         </div>
 
-        <div class="about__cards">
-          <article class="info-card">
-            <h3>Full Stack Engineer</h3>
-            <div class="info-card__body">
-              <img src="asset/image/icon-fullstack-dummy.svg" alt="" />
-              <p>Menguasai seluruh lapisan aplikasi: frontend, backend, database, hingga infrastruktur cloud.</p>
+        <div class="mt-[48px] grid grid-cols-1 gap-[28px] sm:grid-cols-[255px_255px] sm:gap-[48px] lg:mt-[67px] lg:gap-[91px]">
+          <article class="w-full max-w-[290px] sm:max-w-[255px]">
+            <h3 class="mb-[12px] font-utama text-[20px] font-normal leading-none tracking-[0] lg:mb-[13px]">Full Stack Engineer</h3>
+            <div class="flex min-h-[107px] items-center gap-[15px] rounded-[10px] bg-warna3 px-[18px] py-[16px] shadow-kartu">
+              <img src="asset/image/icon-fullstack-dummy.svg" alt="" class="h-[68px] w-[68px] shrink-0 object-contain lg:h-[70px] lg:w-[70px]" />
+              <p class="font-sub text-[13px] leading-[1.12] tracking-[-0.045em] lg:leading-[1.08] lg:tracking-[-0.055em]">
+                Menguasai seluruh lapisan aplikasi: frontend, backend, database, hingga infrastruktur cloud.
+              </p>
             </div>
           </article>
 
-          <article class="info-card">
-            <h3>ASN Jawa Timur</h3>
-            <div class="info-card__body">
-              <img src="asset/image/icon-asn-dummy.svg" alt="" />
-              <p>Berkontribusi dalam digitalisasi layanan publik Pemprov Jatim sebagai tenaga teknis IT.</p>
+          <article class="w-full max-w-[290px] sm:max-w-[255px]">
+            <h3 class="mb-[12px] font-utama text-[20px] font-normal leading-none tracking-[0] lg:mb-[13px]">ASN Jawa Timur</h3>
+            <div class="flex min-h-[107px] items-center gap-[15px] rounded-[10px] bg-warna3 px-[18px] py-[16px] shadow-kartu">
+              <img src="asset/image/icon-asn-dummy.svg" alt="" class="h-[68px] w-[68px] shrink-0 object-contain lg:h-[70px] lg:w-[70px]" />
+              <p class="font-sub text-[13px] leading-[1.12] tracking-[-0.045em] lg:leading-[1.08] lg:tracking-[-0.055em]">
+                Berkontribusi dalam digitalisasi layanan publik Pemprov Jatim sebagai tenaga teknis IT.
+              </p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="keahlian" class="skills">
-      <div class="wrap">
-        <div class="section-title skills__title">
-          <img src="asset/image/icon-skill-dummy.svg" alt="" />
-          <h2>Keahlian Stack dan Teknologi</h2>
+    <section id="keahlian" class="bg-warna1 py-[42px] pb-[50px] text-warna2 sm:pb-[48px] lg:min-h-[216px] lg:pb-[42px]">
+      <div class="mx-auto w-[calc(100%_-_56px)] max-w-[775px] sm:w-[calc(100%_-_80px)] md:w-[calc(100%_-_120px)] lg:w-[calc(100%_-_184px)]">
+        <div class="flex items-center gap-[14px] sm:gap-[16px] lg:gap-[15px]">
+          <img src="asset/image/icon-skill-dummy.svg" alt="" class="h-[54px] w-[54px] shrink-0 object-contain sm:h-[62px] sm:w-[62px]" />
+          <h2 class="font-utama text-[34px] font-normal leading-none tracking-[0] sm:text-[42px] lg:text-[44px]">
+            Keahlian Stack dan Teknologi
+          </h2>
         </div>
 
-        <div class="skills__list">
+        <div class="mt-[35px] grid grid-cols-1 gap-[18px] font-utama text-[19px] leading-none tracking-[0] sm:grid-cols-2 sm:gap-x-[42px] sm:gap-y-[22px] lg:grid-cols-[162px_170px_220px_1fr] lg:gap-[31px] lg:text-[18px]">
           <p>Frontend Developer</p>
           <p>Backend Developer</p>
           <p>Database dan Infrastruktur</p>
@@ -96,34 +135,36 @@
       </div>
     </section>
 
-    <section id="proyek" class="projects">
-      <div class="wrap">
-        <div class="section-title projects__title">
-          <img src="asset/image/icon-project-dummy.svg" alt="" />
-          <h2>Proyek yang pernah dibangun</h2>
+    <section id="proyek" class="bg-warna3 py-[48px] pb-[58px] lg:min-h-[553px] lg:py-[50px]">
+      <div class="mx-auto w-[calc(100%_-_56px)] max-w-[775px] sm:w-[calc(100%_-_80px)] md:w-[calc(100%_-_120px)] lg:w-[calc(100%_-_184px)]">
+        <div class="flex items-center gap-[14px] sm:gap-[16px]">
+          <img src="asset/image/icon-project-dummy.svg" alt="" class="h-[54px] w-[54px] shrink-0 object-contain lg:h-[56px] lg:w-[56px]" />
+          <h2 class="font-utama text-[34px] font-normal leading-none tracking-[0] lg:text-[36px]">
+            Proyek yang pernah dibangun
+          </h2>
         </div>
 
-        <div class="project-list">
-          <article class="project-item">
-            <h3>Website Instansi Perangkat Daerah</h3>
-            <span></span>
-            <p>
+        <div class="mt-[48px] max-w-full lg:mt-[55px]">
+          <article>
+            <h3 class="font-utama text-[24px] font-normal leading-[1.05] tracking-[0] lg:leading-none">Website Instansi Perangkat Daerah</h3>
+            <div class="mt-[9px] h-[2px] w-full max-w-[304px] bg-warna1"></div>
+            <p class="mt-[14px] font-sub text-[14px] leading-[1.16] tracking-[-0.045em] lg:text-[13px] lg:leading-[1.12] lg:tracking-[-0.055em]">
               Membangun website resmi perangkat daerah yang menjadi wajah digital instansi di hadapan publik. Menampilkan profil organisasi, berita, pengumuman, dan layanan informasi - dikelola mandiri oleh staf melalui CMS yang mudah digunakan.
             </p>
           </article>
 
-          <article class="project-item">
-            <h3>Pemetaan Peta Jabatan Daerah</h3>
-            <span></span>
-            <p>
+          <article class="mt-[39px] lg:mt-[42px]">
+            <h3 class="font-utama text-[24px] font-normal leading-[1.05] tracking-[0] lg:leading-none">Pemetaan Peta Jabatan Daerah</h3>
+            <div class="mt-[9px] h-[2px] w-full max-w-[304px] bg-warna1"></div>
+            <p class="mt-[14px] font-sub text-[14px] leading-[1.16] tracking-[-0.045em] lg:text-[13px] lg:leading-[1.12] lg:tracking-[-0.055em]">
               Sistem visualisasi struktur jabatan dan formasi pegawai di lingkup pemerintah daerah. Memetakan posisi ASN secara hierarkis dan interaktif - memudahkan analisis kebutuhan formasi, rotasi, dan perencanaan SDM aparatur.
             </p>
           </article>
 
-          <article class="project-item">
-            <h3>Absensi Digital Tanda Tangan</h3>
-            <span></span>
-            <p>
+          <article class="mt-[39px] lg:mt-[42px]">
+            <h3 class="font-utama text-[24px] font-normal leading-[1.05] tracking-[0] lg:leading-none">Absensi Digital Tanda Tangan</h3>
+            <div class="mt-[9px] h-[2px] w-full max-w-[304px] bg-warna1"></div>
+            <p class="mt-[14px] font-sub text-[14px] leading-[1.16] tracking-[-0.045em] lg:text-[13px] lg:leading-[1.12] lg:tracking-[-0.055em]">
               Aplikasi kehadiran pegawai berbasis tanda tangan digital yang dikerjakan langsung di layar perangkat. Menggantikan absensi manual dengan sistem yang terverifikasi, tercatat otomatis, dan menghasilkan rekap kehadiran siap cetak untuk keperluan administrasi ASN.
             </p>
           </article>
@@ -131,38 +172,38 @@
       </div>
     </section>
 
-    <footer id="kontak" class="contact">
-      <div class="wrap">
-        <div class="contact__top">
-          <div class="contact__heading">
-            <img src="asset/image/icon-contact-dummy.svg" alt="" />
+    <footer id="kontak" class="bg-warna4 py-[31px] pb-[42px] lg:min-h-[214px] lg:py-[30px] lg:pb-[32px]">
+      <div class="mx-auto w-[calc(100%_-_56px)] max-w-[775px] sm:w-[calc(100%_-_80px)] md:w-[calc(100%_-_120px)] lg:w-[calc(100%_-_184px)]">
+        <div class="grid grid-cols-1 gap-[24px] sm:grid-cols-[240px_1fr] sm:gap-[34px] lg:grid-cols-[253px_1fr]">
+          <div class="flex items-center gap-[12px] font-utama">
+            <img src="asset/image/icon-contact-dummy.svg" alt="" class="h-[48px] w-[48px] shrink-0 object-contain" />
             <div>
-              <p>Kontak</p>
-              <h2>Mari Terhubung</h2>
+              <p class="text-[18px] leading-none">Kontak</p>
+              <h2 class="mt-[4px] text-[29px] font-normal leading-none tracking-[0]">Mari Terhubung</h2>
             </div>
           </div>
 
-          <p class="contact__desc">
+          <p class="font-sub text-[15px] leading-[1.12] tracking-[-0.035em] lg:pt-[4px]">
             Terbuka untuk diskusi proyek, kolaborasi, atau sekadar berbagi gagasan seputar teknologi dan inklusivitas digital. Pilih platform yang paling nyaman untuk Anda.
           </p>
         </div>
 
-        <div class="contact__links">
-          <a href="#">
-            <img src="asset/image/icon-instagram-dummy.svg" alt="" />
-            <span>Zhulfi Bajra</span>
+        <div class="mt-[38px] grid grid-cols-1 gap-[20px] font-utama text-[16px] leading-none tracking-[0] sm:grid-cols-2 sm:gap-x-[36px] sm:gap-y-[24px] lg:mt-[46px] lg:grid-cols-[140px_128px_172px_1fr] lg:gap-[35px]">
+          <a href="#" class="flex min-w-0 items-center gap-[10px] transition hover:opacity-80">
+            <img src="asset/image/icon-instagram-dummy.svg" alt="" class="h-[32px] w-[32px] shrink-0 object-contain" />
+            <span class="min-w-0 break-words">Zhulfi Bajra</span>
           </a>
-          <a href="#">
-            <img src="asset/image/icon-linkedin-dummy.svg" alt="" />
-            <span>Zhulfi Bajra</span>
+          <a href="#" class="flex min-w-0 items-center gap-[10px] transition hover:opacity-80">
+            <img src="asset/image/icon-linkedin-dummy.svg" alt="" class="h-[32px] w-[32px] shrink-0 object-contain" />
+            <span class="min-w-0 break-words">Zhulfi Bajra</span>
           </a>
-          <a href="#">
-            <img src="asset/image/icon-website-dummy.svg" alt="" />
-            <span>zhulfibajra.my.id</span>
+          <a href="#" class="flex min-w-0 items-center gap-[10px] transition hover:opacity-80">
+            <img src="asset/image/icon-website-dummy.svg" alt="" class="h-[32px] w-[32px] shrink-0 object-contain" />
+            <span class="min-w-0 break-words">zhulfibajra.my.id</span>
           </a>
-          <a href="mailto:wikjatmiko@gmail.com">
-            <img src="asset/image/icon-email-dummy.svg" alt="" />
-            <span>wikjatmiko@gmail.com</span>
+          <a href="mailto:wikjatmiko@gmail.com" class="flex min-w-0 items-center gap-[10px] transition hover:opacity-80">
+            <img src="asset/image/icon-email-dummy.svg" alt="" class="h-[32px] w-[32px] shrink-0 object-contain" />
+            <span class="min-w-0 break-words">wikjatmiko@gmail.com</span>
           </a>
         </div>
       </div>

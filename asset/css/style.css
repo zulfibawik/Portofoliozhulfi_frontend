@@ -2,6 +2,7 @@
   --green: #36ada3;
   --navy: #242f72;
   --blue: #30578a;
+  --deep: #15165e;
   --title: "Fjalla One", "Arial Narrow", sans-serif;
   --body: "Chiron Sung HK", Georgia, serif;
 }
@@ -18,11 +19,10 @@ html {
 
 body {
   margin: 0;
+  overflow-x:hidden;
   background: var(--navy);
   color: var(--green);
   font-family: var(--body);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -42,412 +42,580 @@ h3 {
   margin: 0;
 }
 
-.page {
+main {
   min-width: 320px;
   overflow: hidden;
 }
 
-.wrap {
-  width: min(calc(100% - 184px), 775px);
-  margin: 0 auto;
-}
-
-.hero {
-  height: 438px;
+#home {
   background: var(--green);
   color: var(--navy);
 }
 
-.hero__inner {
-  position: relative;
-  height: 100%;
+#home > div,
+#tentang > div,
+#keahlian > div,
+#proyek > div,
+#kontak > div {
+  width: min(calc(100% - 56px), 775px);
+  margin: 0 auto;
 }
 
-.hero__header {
+#home > div {
+  position: relative;
+  min-height: 690px;
+  padding-bottom: 300px;
+}
+
+#home header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  height: 89px;
-  padding-top: 25px;
+  gap: 18px;
+  padding-top: 22px;
 }
 
-.logo {
-  width: 51px;
-  height: 51px;
+#home header > a {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
 }
 
-.logo img {
+#home header > a img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.nav {
-  display: flex;
-  gap: 45px;
-  padding-top: 6px;
+#home nav {
+  display: none;
   font-family: var(--title);
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: 0;
 }
 
-.hero__copy {
+#home header + div {
   position: relative;
   z-index: 2;
-  width: 420px;
-  padding-top: 57px;
+  width: 100%;
+  max-width: 420px;
+  padding-top: 50px;
 }
 
-.hero h1 {
+#home h1 {
   font-family: var(--title);
-  font-size: 70px;
+  font-size: 56px;
   font-weight: 400;
-  line-height: 0.94;
-  letter-spacing: 0;
+  line-height: 0.96;
 }
 
-.hero__line {
-  display: block;
-  width: 380px;
+#home h1 + div {
+  width: min(100%, 300px);
   height: 3px;
-  margin-top: 5px;
+  margin-top: 6px;
   background: var(--navy);
 }
 
-.hero__role {
+#home h1 + div + p {
+  max-width: 330px;
   margin-top: 9px;
   font-family: var(--title);
-  font-size: 20px;
-  line-height: 1.1;
-  letter-spacing: 0;
+  font-size: 17px;
+  line-height: 1.14;
 }
 
-.hero__desc {
-  width: 392px;
-  margin-top: 37px;
-  font-size: 20px;
-  line-height: 1.06;
-  letter-spacing: -0.04em;
+#home h1 + div + p + p {
+  max-width: 360px;
+  margin-top: 31px;
+  font-size: 18px;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
 }
 
-.hero__photo {
+img[src$="profile-photo.jpg"] {
   position: absolute;
-  right: -92px;
-  bottom: 0;
-  width: 320px;
-  height: 345px;
+ right: 44%;
+    bottom: 0;
+    width: 298px;
+    height: 290px;
+  max-width: none;
   object-fit: cover;
   object-position: left bottom;
+  transform: translateX(50%);
 }
 
-.about {
-  height: 627px;
-  padding-top: 29px;
+#tentang {
+  padding: 32px 0 54px;
   background: var(--navy);
 }
 
-.section-title {
-  display: flex;
-  align-items: center;
+#keahlian {
+  padding: 42px 0 50px;
+  background: var(--green);
+  color: var(--navy);
 }
 
-.section-title img {
+#proyek {
+  padding: 48px 0 58px;
+  background: var(--blue);
+}
+
+#kontak {
+  padding: 31px 0 42px;
+  background: var(--deep);
+}
+
+#tentang div:has(> img + h2),
+#keahlian div:has(> img + h2),
+#proyek div:has(> img + h2) {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+#tentang div:has(> img + h2) img,
+#keahlian div:has(> img + h2) img,
+#proyek div:has(> img + h2) img {
+  width: 54px;
+  height: 54px;
   flex: 0 0 auto;
   object-fit: contain;
 }
 
-.section-title h2 {
+h2 {
   font-family: var(--title);
+  font-size: 34px;
   font-weight: 400;
   line-height: 1;
-  letter-spacing: 0;
 }
 
-.about__title {
-  gap: 18px;
-}
-
-.about__title img {
-  width: 64px;
-  height: 64px;
-}
-
-.about__title h2 {
-  font-size: 50px;
-}
-
-.about__text {
-  width: 822px;
-  max-width: 100%;
-  margin-top: 25px;
-  font-size: 20px;
-  line-height: 1.16;
-  letter-spacing: -0.055em;
-}
-
-.about__text p + p {
+#tentang div:has(> p) {
   margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
 }
 
-.about__cards {
+#tentang div:has(> p) p + p {
+  margin-top: 22px;
+}
+
+#tentang div:has(> article) {
   display: grid;
-  grid-template-columns: 255px 255px;
-  gap: 91px;
-  margin-top: 67px;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin-top: 48px;
 }
 
-.info-card h3 {
-  margin-bottom: 13px;
+#tentang article {
+  width: min(100%, 290px);
+}
+
+#tentang article h3 {
+  margin-bottom: 12px;
   font-family: var(--title);
   font-size: 20px;
   font-weight: 400;
   line-height: 1;
-  letter-spacing: 0;
 }
 
-.info-card__body {
+#tentang article > div {
   display: flex;
   align-items: center;
   gap: 15px;
-  height: 107px;
+  min-height: 107px;
   padding: 16px 18px;
   border-radius: 10px;
   background: var(--blue);
   box-shadow: 0 16px 26px rgba(0, 0, 0, 0.1);
 }
 
-.info-card__body img {
-  width: 70px;
-  height: 70px;
+#tentang article > div img {
+  width: 68px;
+  height: 68px;
   flex: 0 0 auto;
-  object-fit: contain;
 }
 
-.info-card__body p {
+#tentang article > div p {
   font-size: 13px;
-  line-height: 1.08;
-  letter-spacing: -0.055em;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
 }
 
-.skills {
-  height: 216px;
-  padding-top: 42px;
-  background: var(--green);
-  color: var(--navy);
-}
-
-.skills__title {
-  gap: 15px;
-}
-
-.skills__title img {
-  width: 62px;
-  height: 62px;
-}
-
-.skills__title h2 {
-  font-size: 44px;
-}
-
-.skills__list {
+#keahlian div:has(> p) {
   display: grid;
-  grid-template-columns: 162px 170px 220px 1fr;
-  gap: 31px;
+  grid-template-columns: 1fr;
+  gap: 18px;
   margin-top: 35px;
   font-family: var(--title);
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1;
-  letter-spacing: 0;
 }
 
-.projects {
-  height: 553px;
-  padding-top: 50px;
-  background: var(--blue);
+#proyek div:has(> article) {
+  margin-top: 48px;
 }
 
-.projects__title {
-  gap: 16px;
+#proyek article + article {
+  margin-top: 39px;
 }
 
-.projects__title img {
-  width: 56px;
-  height: 56px;
-}
-
-.projects__title h2 {
-  font-size: 36px;
-}
-
-.project-list {
-  width: 835px;
-  max-width: 100%;
-  margin-top: 55px;
-}
-
-.project-item + .project-item {
-  margin-top: 42px;
-}
-
-.project-item h3 {
+#proyek article h3 {
   font-family: var(--title);
   font-size: 24px;
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0;
+  line-height: 1.05;
 }
 
-.project-item span {
-  display: block;
-  width: 304px;
+#proyek article h3 + div {
+  width: min(100%, 304px);
   height: 2px;
   margin-top: 9px;
   background: var(--green);
 }
 
-.project-item p {
+#proyek article p {
   margin-top: 14px;
-  font-size: 13px;
-  line-height: 1.12;
-  letter-spacing: -0.055em;
+  font-size: 14px;
+  line-height: 1.16;
+  letter-spacing: -0.045em;
 }
 
-.contact {
-  height: 214px;
-  padding-top: 30px;
-  background: #15165e;
-}
-
-.contact__top {
+#kontak div:has(> div + p) {
   display: grid;
-  grid-template-columns: 253px 1fr;
-  gap: 34px;
-  align-items: start;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
-.contact__heading {
+#kontak div:has(> img + div) {
   display: flex;
   align-items: center;
   gap: 12px;
   font-family: var(--title);
 }
 
-.contact__heading img {
+#kontak div:has(> img + div) img {
   width: 48px;
   height: 48px;
 }
 
-.contact__heading p {
+#kontak div:has(> img + div) p {
   font-size: 18px;
   line-height: 1;
 }
 
-.contact__heading h2 {
+#kontak div:has(> img + div) h2 {
   margin-top: 4px;
   font-size: 29px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0;
 }
 
-.contact__desc {
-  padding-top: 4px;
+#kontak div:has(> div + p) > p {
   font-size: 15px;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
 }
 
-.contact__links {
+#kontak div:has(> a) {
   display: grid;
-  grid-template-columns: 140px 128px 172px 1fr;
-  gap: 35px;
-  margin-top: 46px;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 38px;
   font-family: var(--title);
   font-size: 16px;
   line-height: 1;
-  letter-spacing: 0;
 }
 
-.contact__links a {
+#kontak a {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 }
 
-.contact__links img {
+#kontak a img {
   width: 32px;
   height: 32px;
   flex: 0 0 auto;
-  object-fit: contain;
 }
 
-@media (max-width: 860px) {
-  .wrap {
-    width: min(calc(100% - 48px), 775px);
+#kontak a span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 640px) {
+  #home > div,
+  #tentang > div,
+  #keahlian > div,
+  #proyek > div,
+  #kontak > div {
+    width: min(calc(100% - 80px), 775px);
   }
 
-  .hero,
-  .about,
-  .skills,
-  .projects,
-  .contact {
-    height: auto;
+  #home > div {
+    min-height: 520px;
+    padding-bottom: 0;
   }
 
-  .hero {
-    min-height: 620px;
+  #home header {
+    padding-top: 25px;
   }
 
-  .nav {
-    display: none;
+  #home header > a {
+    width: 51px;
+    height: 51px;
   }
 
-  .hero__copy {
-    width: 100%;
-    padding-top: 34px;
+  #home header + div {
+    width: 390px;
+    padding-top: 56px;
   }
 
-  .hero h1 {
-    font-size: 58px;
+  #home h1 {
+    font-size: 61px;
   }
 
-  .hero__line,
-  .hero__desc {
-    width: min(100%, 392px);
+  #home h1 + div {
+    width: 328px;
   }
 
-  .hero__photo {
-    right: 50%;
-    width: 360px;
-    height: 280px;
-    transform: translateX(50%);
+  #home h1 + div + p {
+    max-width: 380px;
+    font-size: 18px;
   }
 
-  .about,
-  .skills,
-  .projects,
-  .contact {
+  #home h1 + div + p + p {
+    max-width: 350px;
+    font-size: 19px;
+  }
+
+  img[src$="profile-photo.jpg"] {
+    right: -38px;
+    width: 310px;
+    height: 325px;
+    transform: none;
+  }
+
+  #tentang {
+    padding-bottom: 60px;
+  }
+
+  #tentang div:has(> img + h2),
+  #keahlian div:has(> img + h2),
+  #proyek div:has(> img + h2) {
+    gap: 16px;
+  }
+
+  #tentang div:has(> img + h2) img,
+  #keahlian div:has(> img + h2) img,
+  #proyek div:has(> img + h2) img {
+    width: 62px;
+    height: 62px;
+  }
+
+  h2 {
+    font-size: 42px;
+  }
+
+  #tentang div:has(> p) {
+    font-size: 19px;
+  }
+
+  #tentang div:has(> article) {
+    grid-template-columns: repeat(2, minmax(0, 255px));
+    gap: 48px;
+  }
+
+  #tentang article {
+    width: 255px;
+  }
+
+  #keahlian div:has(> p) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 42px;
+  }
+
+  #kontak div:has(> div + p) {
+    grid-template-columns: 240px 1fr;
+    gap: 34px;
+  }
+
+  #kontak div:has(> a) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  #home > div,
+  #tentang > div,
+  #keahlian > div,
+  #proyek > div,
+  #kontak > div {
+    width: min(calc(100% - 120px), 775px);
+  }
+
+  #home nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 13px 28px;
+    padding-top: 5px;
+    font-size: 18px;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  #home > div,
+  #tentang > div,
+  #keahlian > div,
+  #proyek > div,
+  #kontak > div {
+    width: min(calc(100% - 184px), 775px);
+  }
+
+  #home > div {
+    min-height: 0;
+    height: 438px;
+  }
+
+  #home header {
+    height: 89px;
+  }
+
+  #home nav {
+    gap: 45px;
+    font-size: 20px;
+  }
+
+  #home header + div {
+    width: 420px;
+    padding-top: 57px;
+  }
+
+  #home h1 {
+    font-size: 70px;
+    line-height: 0.94;
+  }
+
+  #home h1 + div {
+    width: 380px;
+    margin-top: 5px;
+  }
+
+  #home h1 + div + p {
+    max-width: none;
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  #home h1 + div + p + p {
+    max-width: none;
+    margin-top: 37px;
+    font-size: 20px;
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+  }
+
+  img[src$="profile-photo.jpg"] {
+    right: -92px;
+    width: 320px;
+    height: 345px;
+  }
+
+  #tentang {
+    min-height: 627px;
+    padding-top: 29px;
+    padding-bottom: 56px;
+  }
+
+  #tentang div:has(> img + h2) {
+    gap: 18px;
+  }
+
+  #tentang div:has(> img + h2) img {
+    width: 64px;
+    height: 64px;
+  }
+
+  #tentang h2 {
+    font-size: 50px;
+  }
+
+  #tentang div:has(> p) {
+    margin-top: 25px;
+    font-size: 20px;
+    line-height: 1.16;
+    letter-spacing: -0.055em;
+  }
+
+  #tentang div:has(> p) p + p {
+    margin-top: 24px;
+  }
+
+  #tentang div:has(> article) {
+    gap: 91px;
+    margin-top: 67px;
+  }
+
+  #keahlian {
+    min-height: 216px;
     padding-bottom: 42px;
   }
 
-  .about__cards,
-  .skills__list,
-  .contact__top,
-  .contact__links {
-    grid-template-columns: 1fr;
+  #keahlian div:has(> img + h2) {
+    gap: 15px;
   }
 
-  .about__cards,
-  .contact__links {
-    gap: 22px;
+  #keahlian h2 {
+    font-size: 44px;
   }
 
-  .info-card {
-    width: min(100%, 255px);
+  #keahlian div:has(> p) {
+    grid-template-columns: 162px 170px 220px 1fr;
+    gap: 31px;
+    font-size: 18px;
   }
 
-  .section-title h2 {
-    font-size: 34px;
+  #proyek {
+    min-height: 553px;
+    padding-top: 50px;
+  }
+
+  #proyek h2 {
+    font-size: 36px;
+  }
+
+  #proyek div:has(> article) {
+    margin-top: 55px;
+  }
+
+  #proyek article + article {
+    margin-top: 42px;
+  }
+
+  #proyek article p {
+    font-size: 13px;
+    line-height: 1.12;
+    letter-spacing: -0.055em;
+  }
+
+  #kontak {
+    min-height: 214px;
+    padding-top: 30px;
+    padding-bottom: 32px;
+  }
+
+  #kontak div:has(> div + p) {
+    grid-template-columns: 253px 1fr;
+  }
+
+  #kontak div:has(> div + p) > p {
+    padding-top: 4px;
+  }
+
+  #kontak div:has(> a) {
+    grid-template-columns: 140px 128px 172px 1fr;
+    gap: 35px;
+    margin-top: 46px;
   }
 }
