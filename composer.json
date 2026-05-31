@@ -1,0 +1,11 @@
+{
+  "name": "zhulfi/portfolio-docker",
+  "description": "Portfolio frontend Tailwind CDN dengan PHP 8, MySQLi, MySQL, dan phpMyAdmin.",
+  "type": "project",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}
